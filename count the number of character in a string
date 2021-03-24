@@ -1,0 +1,30 @@
+var str = "enter a string";
+var obj = {};
+for (let i = 0; i < str.length; i++) {
+    let char = str.charAt(i);
+    if (obj[char]) {
+        obj[char]++;
+    } else {
+        obj[char] = 1;
+    }
+}
+console.log(obj);
+
+// output :   { e: 2, n: 2, t: 2, r: 2, ' ': 2, a: 1, s: 1, i: 1, g: 1 }
+
+// find the max number of character in the string 
+
+var max = 0;
+var ch = '';
+for (var k in obj) {
+    if (obj[k] > max) {
+        max = obj[k];
+        ch = k;
+    }
+}
+if (ch == ' ') {
+    ch = 'space';
+}
+console.log('the max nmuber is ' + ch + ' the number is ' + max);
+
+//output:the max nmuber is space the number is 4
