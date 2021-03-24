@@ -1,0 +1,10 @@
+//arr to str  we can use join
+var arr = ['abc', 'ede', 'ere', 'fsgg', 'ggg', 'gfed'];
+str = arr.join('**');
+console.log(str);
+// output abc**ede**ere**fsgg**ggg**gfed
+
+// str to arr we can use splic
+arr = str.split('**');
+console.log(arr);
+//output :[ 'abc', 'ede', 'ere', 'fsgg', 'ggg', 'gfed' ]
