@@ -1,0 +1,46 @@
+
+newStr = 'abaasdffggghhjjkkgfddsssss3444343';
+// how long of the str
+var sizeStr = newStr.length;
+//get the chars in a pointed positon
+// index at 0 3 5 9
+function getChar(str, index) {
+    let ch = str.charAt(index);
+    return ch;
+}
+//test is there a character in the str 
+function chaTest(str, ch) {
+    let result = str.indexOf(ch)
+    if (result == -1) {
+        return false;
+    } else {
+        return true;
+    }
+}
+//replace char to the other one
+function replaceChar(str, cha, newcha) {
+    while (str.indexOf(cha) != -1) {
+        str = str.replace(cha, newcha)
+    }
+    return str;
+}
+
+// Intercept characters from string
+function interceptChar(str, start, end) {
+    let str2 = str.slice(start, end + 1);
+    return str2;
+}
+// or use the length of intercept
+function interceptChar2(str, start, length) {
+    let str2 = str.substr(start, length);
+    return str2;
+}
+
+
+
+console.log(sizeStr);
+console.log(getChar(newStr, 3));
+console.log(chaTest(newStr, 'c'));
+console.log(replaceChar(newStr, 'g', 22));
+console.log(interceptChar(newStr, 1, 5));
+console.log(interceptChar2(newStr, 1, 5));
