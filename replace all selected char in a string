@@ -1,0 +1,12 @@
+str = 'here is many words need to be test!';
+console.log(str.replace(' ', '--'));
+
+//output here--is many words need to be test!   only replace the first char.
+
+str1 = 'here is many words need to be test!';
+while (str1.indexOf(' ') !== -1) {
+    str1 = str1.replace(' ', '--')
+}
+console.log(str1);
+
+//output: here--is--many--words--need--to--be--test!
