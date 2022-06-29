@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h1>
+    student's grade
+</h1>
+<form action="">
+    <script>
+        var sumGrade = 0;
+        var sNum = prompt("enter the students's total number");
+        for (var i = 1; i <= sNum; i++) {
+            var grade = prompt("enter the " + i + " student's grade")
+            sumGrade = sumGrade + grade * 1;
+        }
+        var average = sumGrade / sNum;
+        console.log(sumGrade);
+        console.log(average);
+    </script>
+</form>
+
+<body>
+
+</body>
+
+</html>
