@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Computer(color, weigth, logo, number) {
+            this.color = color;
+            this.weigth = weigth;
+            this.logo = logo;
+            this.number = number;
+
+            this.movie = function movie() {
+                console.log("moive");
+            }
+
+            this.music = function music() {
+                console.log("music");
+            }
+
+            this.program = function program() {
+                console.log("program");
+            }
+        }
+        var huawei = new Computer('black', 20 + 'kg', 'huaiwei', 2020);
+        huawei.program();
+        huawei.music();
+        for (var key in huawei) {
+            console.log(key);
+            console.log(huawei[key]);
+        }
+    </script>
+</body>
+
+</html>
