@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<SCript>
+    function dates() {
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var dates = date.getDate();
+        var days = ['Sunday', 'Monday', 'Tusday', 'Wensday', 'Thursday', 'Friday', 'Saturday']
+        var day = date.getDay();
+        var hour = date.getHours();
+        hour = hour < 10 ? '0' + hour : hour;
+        var minutes = date.getMinutes();
+        minutes = minutes < 10 ? '0' + month : month;
+        var second = date.getSeconds();
+        second = second < 10 ? '0' + second : second;
+        return month + ' ' + dates + ' ' + year + ' ' + days[day] + ' ' + hour + ':' + minutes + ':' + second;
+    }
+    console.log(dates());
+</SCript>
+
+<body>
+
+</body>
+
+</html>

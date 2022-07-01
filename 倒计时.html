@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function countTime(times) {
+            var nowtime = +new Date(); //返回当前毫秒
+            var futureTime = +new Date(times)
+            var time = futureTime - nowtime;
+            var days = parseInt(time / 1000 / 60 / 60 / 24);
+            var hour = parseInt(time / 1000 / 60 / 60 % 24);
+            hour = hour < 10 ? '0' + hour : hour;
+            var minute = parseInt(time / 1000 / 60 % 60);
+            minute = minute < 10 ? '0' + minute : minute;
+            var second = parseInt(time / 1000 % 60);
+            second = second < 10 ? '0' + second : second;
+            return days + ' days' + hour + ' hours' + minute + ' minutes' + second + ' seconds'
+        }
+        var day = '2023-5-1 18:00:00';
+        console.log(countTime(day));
+    </script>
+</body>
+
+</html>
