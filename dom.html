@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 学习</title>
+    <h1>DOM study</h1>
+</head>
+
+<body>
+    <div id='time'>July 02,2022</div>
+    <ul>
+        <li>test</li>
+        <li>test1</li>
+        <li>test2</li>
+        <li>test3</li>
+        <li>test4</li>
+    </ul>
+    <script>
+        var timer = document.getElementById('time') //参数必须是字符串
+        console.log(timer);
+        console.dir(timer); // 打印OBJECT
+        //标签获取法
+        //getElementsByTagName()
+        var tag = document.getElementsByTagName('li');
+        for (var i = 0; i < tag.length; i++) {
+            console.log(tag[i]);
+        }
+        //element.getElementsByTagName()   element可以用document.getElementById('')获得
+        //document.getElementsByClassName('classname');
+        // document.querySelector('选择器')  '.id' '#class' 'tagName'
+
+        //获取元素对象
+        var bodyEle = document.body;
+        console.log(bodyEle);
+        console.dir(bodyEle);
+        //获取HTML元素
+        var htmlEle = document.documentElement;
+        console.log(htmlEle);
+    </script>
+</body>
+
+</html>
