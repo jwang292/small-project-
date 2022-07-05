@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>name</td>
+                <td>subject</td>
+                <td>score</td>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        var datas = [{
+            name: 'd',
+            subject: 'js',
+            score: 100
+        }, {
+            name: 'x',
+            subject: 'js',
+            score: 90
+        }, {
+            name: 'e',
+            subject: 'js',
+            score: 80
+        }];
+        //tbody 里创建行，几个人就有几行 也就是array 的length;
+        var tbody = document.querySelector('tbody');
+        for (var i = 0; i < datas.length; i++) {
+            var tr = document.createElement('tr');
+            tbody.appendChild(tr);
+            for (var k in datas[i]) {
+                var td = document.createElement('td');
+                //把OBJECT的属性值 给TD
+                // K是属性名， OBJ[K] 属性值。
+                td.innerHTML = datas[i][k];
+                tr.appendChild(td);
+            }
+            //创建有删除功能的单元格
+            var td = document.createElement('td');
+            td.innerHTML = '<a href="javascript:;">delete</a>';
+            tr.appendChild(td);
+        }
+        //delete 操作
+        var as = document.querySelectorAll('a');
+        for (var i = 0; i < as.length; i++) {
+            as[i].onclick = function() {
+                tbody.removeChild(this.parentNode.parentNode);
+            }
+        }
+    </script>
+</body>
+
+</html>
