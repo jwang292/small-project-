@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .father {
+        background-color: red;
+        width: 130px;
+        height: 130px;
+    }
+    
+    .son {
+        background-color: blueviolet;
+        width: 130px;
+        height: 130px;
+    }
+</style>
+<div class='father'>father</div>
+<div class='son'>son </div>
+
+<body>
+    <script>
+        var son = document.querySelector('.son');
+        son.addEventListener('click', function(e) {
+                alert('son');
+                e.stopPropagatio(); //停止冒泡
+            }, false) //dom设置为冒泡 不写FALSE一样。
+        var father = document.querySelector('.father')
+        father.addEventListener('click', function() {
+            alert('father');
+        }, false);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img {
+        position: absolute;
+    }
+</style>
+
+<body>
+    <img src="D:\媒体\长视频剪辑\picture\1.jpg" alt="">
+    <script>
+        var pic = document.querySelector('img');
+        document.addEventListener('mousemove', function(e) {
+            var x = e.pageX;
+            var y = e.pageY;
+            pic.style.left = x + 'px'; //单位千万别忘记！！！！
+            pic.style.top = y + 'px';
+        })
+    </script>
+</body>
+
+</html>
