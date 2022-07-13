@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='jquery.min.js'></script>
+</head>
+<style>
+    div {
+        float: left;
+    }
+</style>
+
+<body>
+    <div>
+        <p class='price'>$12.5</p>
+
+    </div>
+    <div>
+        <a href="javascript:;" class='decrease'>-</a>
+        <input type="text" class='itext' value='1'>
+        <a href="javascript:;" class='increase'>+</a>
+    </div>
+    <div>
+        <p class='final'>
+            $12.4
+        </p>
+    </div>
+    <script>
+        var number = $('.itext').val();
+        var price = $('.price').html().substr(1);
+        var final = $('.final').html();
+        $('.increase').click(function() {
+            var n = $(this).siblings('.itext').val();
+            n++;
+            $(this).siblings('.itext').val(n);
+            $('.final').html('$' + (price * n).toFixed(2)); //赋值必须写到html里面
+        })
+        $('.decrease').click(function() {
+            if ($('.itext').val() > 1) {
+                var n = $(this).siblings('.itext').val();
+                n--;
+                $(this).siblings('.itext').val(n)
+                $('.final').html('$' + (price * n).toFixed(2));
+            } else {
+                number = 1
+                $('.final').html('$' + price * number);
+            }
+        })
+    </script>
+</body>
+
+</html>
