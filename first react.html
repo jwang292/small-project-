@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <!--引入js 文件-->
+    <script src="./node_modules/react/umd/react.development.js"></script>
+    <script src='./node_modules/react-dom/umd/react-dom.development.js'></script>
+
+    <script>
+        //  创建react 元素
+        //  element name   == html tag
+        //  element Attributes
+        //  element child node (can more than one)
+        const title = React.createElement('h1', {
+                title: 'this is a title',
+                id: 'title'
+            }, 'hello React')
+            // 渲染react元素
+            // 要渲染的元素
+            // 挂载点
+        ReactDOM.render(title, document.getElementById('root'));
+
+        // const titljsx = < h1 > hello JSX < /h1>;
+        // ReactDom.render(titlejsx, document.getElementById('root'))
+    </script>
+</body>
+
+</html>
