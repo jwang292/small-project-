@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var length = 10
+      var obj = {
+        length: 20,
+        sayHi() {
+          console.log(this.length)
+        },
+      }
+      obj.sayHi() //obj自己调用的 所以就是20
+      const fn = obj.sayHi
+      fn() //fn调用的 在全局下 ==window调用的 window.obj.sayHi ,所以是10
+      var arr = [obj.sayHi, 1, 2]
+      arr[0]() // arr调用的 所以 =arr.sayHi == arr.length = 3
+    </script>
+  </body>
+</html>
