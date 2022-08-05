@@ -1,0 +1,12 @@
+html body {
+  margin: 0px;
+  padding: 0px;
+}
+
+th,
+td {
+  border: 1px solid black;
+  width: 200px;
+  height: 50%;
+  text-align: center;
+}
