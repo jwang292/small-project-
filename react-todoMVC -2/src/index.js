@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import base from './styles/base.css'
@@ -8,12 +8,7 @@ import TodoFooter from './components/TodoFooter'
 import TodoMain from './components/TodooMain'
 class App extends React.Component {
   state = {
-    list: [
-      { id: 1, name: 'HTML', done: false },
-      { id: 2, name: 'CSS', done: false },
-      { id: 3, name: 'JS', done: false },
-      { id: 4, name: 'REACT', done: false },
-    ],
+    list: [],
     type: 'active',
   }
 
@@ -88,7 +83,15 @@ class App extends React.Component {
       }),
     })
   }
+  componentDidMount() {
+    this.setState({
+      list: JSON.parse(localStorage.getItem('todos')) || [],
+    })
+  }
 
+  componentDidUpdate() {
+    localStorage.setItem('todos', JSON.stringify(this.state.list))
+  }
   render() {
     const { list, type } = this.state
     return (
