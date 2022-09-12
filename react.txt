@@ -1,0 +1,13 @@
+store: react仓库
+ 1. 提供state与操作state的方法
+ 2. 一个redux 项目中，只有一个store
+ 3. 整个redux 应该的管理，指挥action, reducer干活
+
+action: 表示一个动作（添加内容，删除内容等）
+ 1.action 描述了需要做一件什么样的事（不执行）
+ 2."专家"：只提供想法，不干活
+
+reducer: 劳动者
+ 1.根据action 来完成这个动作
+ 2.实际干活的
+ 3.reducer 不会主动完成action,需要store 控制
