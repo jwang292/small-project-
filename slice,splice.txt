@@ -1,0 +1,2 @@
+slice (start,end)  include start no-include end 不改变原数组
+splice (start,length, ...element)   改变原数组。 开始下标，删除多个原素，拼入的元素
