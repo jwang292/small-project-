@@ -1,0 +1,80 @@
+项目中加如 tsc --init 的配置文件
+
+如果function 没有返回值，可以用viod  -- 可以返回 undifined 也可以空。 但用undifined只能返回undifined
+function sayHi(name:string):void{console.log('hi',name) }
+
+声明函数有几个参数就要几个参数，但可选参数可以无视要求,通过？指定参数
+function slice(begin？:number,end？:number): void{}    必选参数不能放在可以选参数后面。 可选参数必须在最后
+
+默认值
+function slice(begin:number=0,end:number=2): void{} 
+
+interface 类型 
+interface 接口name {object 描述}
+
+object 对象类型   
+指定对象类型和默认值
+let teacher :{
+name:string
+age:number
+hobby:string[]
+sayHi：void
+}={
+name:'zs'
+age:29
+hobby:['sleep','fishing']
+sayHi(){console.log('hi')}
+}
+
+类型别名-指定对象类型  -首字母大写-对象类型的复用
+type Person={
+name:string
+age:number
+hobby？:string[]    //？可选属性
+sayHi：void
+}
+let teacher :Person={
+name:'zs'
+age:29
+hobby:['sleep','fishing']
+sayHi(){console.log('hi')}
+}
+
+type可以定义任意类型 ， 有=
+interface只能给对象指定类型， 没=
+
+interface 有 extends . type没有extends
+
+tuple 元组  [number , number]  明确指定多少个元素以及每个元素类型
+
+定义变量并赋值后，会发生类型推论
+let num=11 type inference
+
+const 指定的变量都是 字面量类型 literal type
+或者： let str:'abc'='abc'
+interface User{
+name:string
+age:nmuber
+gender:'Man'|'Woman'
+}
+
+枚举类型  自带默认数值
+enumeration type
+enmu Gender{
+Woman,  //可以指定默认值woman=3, 或者保留默认值为0
+Man
+}
+function send(gender:Gender){console.log(gender)}
+send(Gender.Man)
+send(Gender.Woman)
+
+类型断言 type assertion
+const box =doucment.getElementById('img') as HTMLImageElement 
+
+typeof 使用与调用第三方库，配置对象是别人提供的，希望代码基于这个对象，用typeof
+let obj ={
+x:10
+y:2
+}
+type Obj= typeof obj
+
